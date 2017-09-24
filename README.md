@@ -2,6 +2,7 @@
 ---------------------------------
 
 for getting in the web, double click the /MyRestaurantwebsite/home.html
+
 for Ordering food, customer and waitor should both login this website
 
 #####home page
