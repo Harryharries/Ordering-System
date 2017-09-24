@@ -1,7 +1,7 @@
 # Ordering-System
 ---------------------------------
 
-for getting in the web, double click the /MyRestaurantwebsite/home.html
+for getting in the web, download the package, then double click the file: /MyRestaurantwebsite/home.html
 
 for Ordering food, customer and waitor should both login this website
 
