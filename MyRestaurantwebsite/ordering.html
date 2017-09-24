@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+
+
+
+ .modal,.modal2,.modal3,.modal4 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+    .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+
+}
+    .close,.close2,.close3,close4 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close,.close2,.close3,close4:hover,
+.close,.close2,.close3,close4:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+#header {
+    background-color:#333333;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:5px;
+    background-color:#eeeeee;
+    height:465px;
+    width:250px;
+    float:left;
+    padding:5px;
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;
+}
+#footer {
+    background-color:#333333;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;
+}
+#search{
+
+vertical-align:middle;
+}
+.search {
+  background-image: url('find.png');
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  margin-left: 500px;
+
+}
+#total{
+  font-size: 25px;
+  margin-left: 20%;
+
+}
+#myTable {
+  border-collapse: collapse;
+  width: 800px;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  margin-left: 50px;
+   vertical-align:middle;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+
+}
+table #mybill {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#mybill th, #mybill td {
+
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.button {
+    background-color: gray;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20%;
+	padding: 5px 10px;
+}
+ul.qty{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+
+ul.qty  .butt
+{
+    border-style: solid;
+    border-width: medium;
+	background-color:gray;
+	border-color:gray;
+	padding: 8px 10px;
+}
+.num
+{
+    border-style: solid;
+    border-width: medium;
+	border-color:gray;
+	 padding: 5px 10px;
+}
+.confirm{
+	border: none;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+    display: inline-block;
+	 margin-left: 20%;
+	 font-size: 16px;
+	transition-duration: 0.4s;
+
+
+}
+.confirm a{
+text-decoration: none;
+color: white;
+}
+.cbut{
+    background-color: gray;
+    color: white;
+    border: 2px solid gray;
+}
+.a:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+.submit {
+
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.button1 {
+    background-color: gray;
+    color: white;
+    border: 2px solid gray;
+    margin-left: 200%;
+  	margin-top: 25px;
+
+}
+
+.button1:hover {
+    background-color: white;
+    color: black;
+}
+.tags{
+font-size: 15px;
+margin-left:10px;
+margin-top:20px;
+ font-weight: lighter;
+
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+#others a{
+position:absolute;
+color: white;
+
+}
+#f1
+{
+top:5%;
+left:90%;
+}
+#f2
+{
+top:8%;
+left:90%;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<p id = "others"><a id="f1" href="home.html" >Home</a></p>
+<p id = "others"><a id="f2" href="map.html" >Map</a></p>
+
+<h1>Ordering</h1>
+</div>
+
+<div id="nav">
+<h3>Search by #tags: </h>
+<h4 style="margin-left:5px;">Sort by ingredient</h>
+<div class="tags ingre">
+<p id="fishtag" onclick="tag()"><a href="#" >#fish</a></p><p><a href="#" >#chicken</a></p><p><a href="#" >#pork</a></p><p><a href="#" >#beef</a></p><p><a href="#" >#shrimp</a></p><br>
+</div>
+<h4 style="margin-left:5px;">Sort by taste</h>
+<div class="tags taste">
+<p><a href="#" >#spicy</a></p><p><a href="#" >#sour</a></p><p><a href="#" >#salt</a></p><p><a href="#" >#sweet</a></p>
+</div>
+</div>
+
+<div id="section">
+<input type="search" id="mySearch" class = "search" onsearch="mySbox()" placeholder="eg: fish or 031...">
+<p id="result"></p>
+<table id="myTable">
+  <tr class="header">
+    <th style="width:10%;">Did</th>
+    <th style="width:25%;">Name</th>
+    <th style="width:10%;">Price</th>
+    <th style="width:20%;">Qty</th>
+    <th style="width:20%;">Comment</th>
+
+  </tr>
+  <tr id="031">
+    <td>031</td>
+    <td>pan-fried fish</td>
+    <td>$12.5</td>
+    <td >
+    	<ul class="qty">
+		<input class="butt" type="button" value="-" onclick="des(1)"/>
+		<span class="num" id="num1">0</span>
+		<input class="butt" type="button" value="+" onclick="inc(1)"/>
+
+    	</ul>
+    	</td>
+
+   	<td><input type="text" name="spRequired" placeholder="eg.Extra spicy" style="opacity: 0.6;"></td>
+  </tr>
+  <tr id="032">
+    <td>032</td>
+    <td>batter df fish</td>
+    <td>$12.5</td>
+     <td>
+     	<ul class="qty">
+	  		<input class="butt" type="button" value="-" onclick="des(2)"/>
+	  		<span class="num" id="num2">0</span>
+	  		<input class="butt" type="button" value="+" onclick="inc(2)"/>
+
+    	</ul>
+     </td>
+    <td><input type="text" name="spRequired" placeholder="eg.Extra spicy" style="opacity: 0.6;"></td>
+  </tr>
+  <tr id="033">
+    <td>033</td>
+    <td>sweet&sour soup</td>
+    <td>$7.0</td>
+     <td>
+     	<ul class="qty">
+	    		<input class="butt" id="033" type="button" value="-" onclick="des(3)"/>
+				<span class="num" id="num3">0</span>
+				<input class="butt" type="button" value="+" onclick="inc(3)"/>
+
+    	</ul>
+     </td>
+    <td><input type="text" name="spRequired" placeholder="eg.Extra spicy" style="opacity: 0.6;"></td>
+  </tr>
+  <tr id="034">
+    <td>034</td>
+    <td>spicy chicken</td>
+    <td>$15.0</td>
+     <td>
+     	<ul class="qty">
+	     		<input class="butt" type="button" value="-" onclick="des(4)"/>
+		 		<span class="num" id="num4">0</span>
+		 		<input class="butt" type="button" value="+" onclick="inc(4)"/>
+
+    	</ul>
+     </td>
+    <td><input type="text" name="spRequired" placeholder="eg.Extra spicy" style="opacity: 0.6;"></td>
+  </tr>
+
+
+</table>
+
+<button class="submit button1" id="myBtn" >Submit</button>
+
+</div>
+
+<div id="footer">
+<p></p>
+
+
+</div>
+ <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">x</span>
+
+            <h2 >----------#Order:0000001---------------------</h2>
+	<table id="mybill">
+	  <tr>
+	    <th>Did</th>
+	    <th>Name</th>
+	    <th>Price</th>
+	    <th>Qty</th>
+	  </tr>
+	  <tr id="b31">
+	    <td>031</td>
+	    <td>pan-fried fish</td>
+	    <td>$12.5</td>
+	    <td ><p id="qa">0</p></td>
+	  </tr>
+	  <tr id="b32">
+	    <td>032</td>
+	    <td>batter df fish</td>
+	    <td>$12.5</td>
+	    <td><p id="qb">0</p></td>
+	  </tr>
+	  <tr id="b33">
+	    <td>033</td>
+	    <td>sweet&sour soup</td>
+	    <td>$7.0</td>
+	    <td><p id="qc">0</p></td>
+	  </tr>
+	  <tr id="b34">
+	    <td>034</td>
+	    <td>spicy chicken</td>
+	    <td>$15.0</td>
+	    <td><p id="qd">0</p></td>
+	</tr>
+</table>
+
+<p id="total"></p>
+<button class="confirm cbut" ><a href="map.html" onclick="success()">Confirm</a></button>
+     </div>
+    </div>
+</body>
+<script>
+var qty1 =0;
+var qty2 =0;
+var qty3 =0;
+var qty4 =0;
+
+function success(){
+
+alert("Successful submition, reciept printed. Back to map")
+}
+
+function inc(n)
+{
+if(n==1){
+qty1++;
+document.getElementById("num1").innerHTML = qty1;
+document.getElementById("qa").innerHTML = qty1;
+
+}
+if(n==2){
+qty2++;
+document.getElementById("num2").innerHTML = qty2;
+document.getElementById("qb").innerHTML = qty2;
+
+}
+if(n==3){
+qty3++;
+document.getElementById("num3").innerHTML = qty3;
+document.getElementById("qc").innerHTML = qty3;
+
+}
+if(n==4){
+qty4++;
+document.getElementById("num4").innerHTML = qty4;
+document.getElementById("qd").innerHTML = qty4;
+
+}
+}
+function des(n)
+{
+if(n==1){
+qty1--;
+qty1=Math.max(0, qty1)
+document.getElementById("num1").innerHTML = qty1;
+document.getElementById("qa").innerHTML = qty1;
+
+}
+if(n==2){
+qty2--;
+qty2=Math.max(0, qty2)
+
+document.getElementById("num2").innerHTML = qty2;
+document.getElementById("qb").innerHTML = qty2;
+
+}
+if(n==3){
+qty3--;
+qty3=Math.max(0, qty3)
+
+document.getElementById("num3").innerHTML = qty3;
+document.getElementById("qc").innerHTML = qty3;
+
+}
+if(n==4){
+qty4--;
+qty4=Math.max(0, qty4)
+
+document.getElementById("num4").innerHTML = qty4;
+document.getElementById("qd").innerHTML = qty4;
+
+}
+
+}
+
+
+var c=0;
+function mySbox() {
+	c=c+1;
+
+   var x = document.getElementById("mySearch");
+   document.getElementById("result").innerHTML = "You are searching for: " + x.value;
+
+   if(x.value=="fish")
+   {
+
+   document.getElementById('033').style.display='none';
+   document.getElementById('034').style.display='none';
+   }
+   if(x.value=="031"||x.value=="31")
+   {
+   document.getElementById('033').style.display='none';
+   document.getElementById('034').style.display='none';
+   document.getElementById('032').style.display='none';
+
+   }
+}
+function tag() {
+   document.getElementById("result").innerHTML = "You are searching for:  fish" ;
+
+   document.getElementById('033').style.display='none';
+   document.getElementById('034').style.display='none';
+
+}
+
+var modal = document.getElementById('myModal');
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+var total=0;
+btn.onclick = function() {
+    modal.style.display = "block";
+    if(qty1<=0)
+	{
+	   document.getElementById('b31').style.display='none';
+	}
+	if(qty2<=0)
+	{
+	   document.getElementById('b32').style.display='none';
+	}
+	if(qty3<=0)
+	{
+	   document.getElementById('b33').style.display='none';
+	}
+	if(qty4<=0)
+	{
+	   document.getElementById('b34').style.display='none';
+}
+	total=qty1*12.5+qty2*12.5+qty3*7+qty4*15;
+   	document.getElementById("total").innerHTML = "Total: $ " + total;
+
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+
+
+</script>
+</html>

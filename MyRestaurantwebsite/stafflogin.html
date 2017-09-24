@@ -1,0 +1,103 @@
+<!DOCTYPE>
+<html>
+<head>
+
+<title>staff login</title>
+<style type="text/css">
+
+
+
+body{font-family:Microsoft YaHei,Verdana,Arial,SimSun;color:#666;font-size:14px;background:#fff; overflow:hidden;}
+
+.main{width:1000px;margin:0 auto;overflow: hidden;height: auto;clear: both;}
+
+.main .mainLeft{width:50%;margin-top:30px;padding-bottom:100px;}
+
+.main .mainLeft h3 span{display:inline-block;width:6.5em;font-size:18px;color: #333;line-height:50px;border-bottom:4px solid #666;margin-bottom: -2px;font-family: 600;text-align: center;}
+
+.main .mainLeft input{width:50%;padding:10px;font-size:16px;border:1px solid #ccc;border-radius: 3px;margin:20px 0 0 50px;}
+
+.main .mainLeft input[type="text"]{margin-top:60px;}
+
+.mainLeft input[type="text"]::-ms-delete { display: none; }
+
+.main .mainLeft input[type="text"]:valid + .delete  { display: inline; }
+
+.gobackhome{color:white;position:absolute;top:1%;right:0.8%}
+#header {
+    background-color:#333333;
+    color:white;
+    text-align:center;
+    padding:0.1%;
+}
+#footer {
+    background-color:#333333;
+    color:white;
+    clear:both;
+    text-align:center;
+   	padding:5px;
+   	margin-top:50px;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+#others a{
+position:absolute;
+color: white;
+
+}
+#f1
+{
+top:5%;
+left:90%;
+}
+#hint
+{
+color:red;
+}
+</style>
+</head>
+
+<body>
+    <div id="header">
+    	<p id = "others"><a id="f1" href="home.html" >Home</a></p>
+        <h2>Staff login</h2>
+
+    </div>
+		<div class="main">
+			<div class="mainLeft">
+				<h3><span>staff login</span></h3>
+				<form method="post" action="###" name="myform" onsubmit="checkpost()">
+				    <label for="name"></label><input class="text" type="text" name="name" id="name" placeholder="user name" required value=""><br />
+					<label for="pw"></label><input for="pw" type="password" name="pw" placeholder="password" id="pw"><br />
+
+                    <input type="submit" value="sumbit" />
+
+				</form>
+			</div>
+			</div>
+<p id="hint">*Hint: username is "s", and password is "p"</p>
+<div id="footer">
+<p></p>
+
+
+</div>
+</body>
+</html>
+
+
+
+<script>
+function checkpost(){
+	if(document.forms[0].name.value=="s"&&document.forms[0].pw.value=="p"){
+		window.open("map.html");
+		}else{
+		alert("you give the wrong username or password!")
+		return false;
+		}
+	}
+</script>

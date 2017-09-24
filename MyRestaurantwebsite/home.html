@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>
+function openMenu() {
+    var myWindow = window.open("https://joeys.ca/menu");
+}
+
+function openLogin() {
+    var myWindow = window.open("stafflogin.html");
+}
+</script>
+<style>
+#header {
+    background-color:#333333;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:465px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;
+}
+#footer {
+    background-color:#333333;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;
+}
+#firstPic{
+position:relative;
+}
+.button {
+position:absolute;
+font-size: 24px;
+padding: 14px 40px;
+background-color: #eeeeee;
+color: #808080;
+border: none;
+border-radius: 4px;
+transition-duration: 0.4s;
+opacity: 0.6;
+
+
+}
+#menuButton {
+top:80%;
+left:40%;
+}
+#loginbutton{
+top:80%;
+left:55%;
+}
+.button:hover {
+
+    color: red;
+
+}
+
+#login{
+position:absolute;
+margin-left:1100px;
+margin-right:50px;
+top:95%;
+
+color:white;
+}
+
+a{
+    color: #808080;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<h1>Welcome! Ordering System</h1>
+</div>
+
+<div id="nav">
+<br>
+<br>
+<br>
+</div>
+
+<div id="section">
+<h2></h2>
+<p>
+<img id= "firstPic" src="triple.jpg" />
+</p>
+<p>
+<button id = "menuButton" class = "button"><a href="menu1.html">MENU</a></button>
+<button id = "loginbutton" class = "button"><a href="stafflogin.html">Staff Login</a></button>
+
+</p>
+
+</div>
+
+<div id="footer">
+Ending footer.
+
+
+</div>
+
+</body>
+</html>

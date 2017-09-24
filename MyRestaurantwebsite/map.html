@@ -1,0 +1,93 @@
+<style type="text/css">
+
+.backmap{width:100%;height:88%;background:grey;}
+.Square_door { width: 100px; height: 100px; background: #669;position:absolute; right:0.80%; top:14%;}
+.Square_frontdesk { width: 200px; height: 90px; background: #669;position:absolute; left:0.8%; bottom:2%;}
+.Square_washroom { width: 200px; height: 90px; background: #669;position:absolute; right:0.8%; bottom:2%;}
+.Square_waitline { width: 100px; height: 70%; background: white;position:absolute; left:0.8%; top:14%;}
+.button{width:30px;height:30px;color: white;background: black;}
+.tablebutton_2people{width: 60px;height:60px;color:black;background:white;font-size: 30px}
+.tablebutton_4people{width: 80px;height:80px;color:black;background:white;font-size: 30px}
+.tablebutton_8people{width: 120px;height:120px;color:black;background:white;font-size: 30px}
+.waitlist{font-size: 20px;color: black}
+.gobackhome{color:white;position:absolute;top:1%;right:0.8%}
+body{
+background:white;
+}
+
+h1{
+color: aqua;
+text-align:center;
+
+}
+
+
+#header {
+    background-color:#333333;
+    color:white;
+    text-align:center;
+    padding:0.1%;
+}
+#others a{
+position:absolute;
+color: white;
+
+}
+
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+#f1
+{
+top:5%;
+left:90%;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <div id="header">
+    	<p id = "others"><a id="f1" href="home.html" >Home</a></p>
+        <h2>Map</h2>
+
+    </div>
+    <div class = "backmap">
+
+        <div class="Square_door">
+            <h1>Door</h1>
+        </div>
+        <div class="Square_frontdesk">
+            <h1>Front desk</h1>
+        </div>
+        <div class="Square_washroom">
+            <h1>Washroom</h1>
+        </div>
+        <div class="Square_waitline">
+            <h1 class="waitlist">waiting list</h1>
+            <input class="button" type="button" value="+" >
+            <input class="button" type="button" value="-" >
+        </div>
+        <a href="ordering.html">
+        <button class="tablebutton_2people" style="position:absolute; left:20%; top:20%;">1</button>
+        <button class="tablebutton_2people" style="position:absolute; left:20%; top:40%;">2</button>
+        <button class="tablebutton_2people" style="position:absolute; left:20%; top:60%;">3</button>
+        <button class="tablebutton_4people" style="position:absolute; left:35%; top:20%;">4</button>
+        <button class="tablebutton_4people" style="position:absolute; left:35%; top:40%;">5</button>
+        <button class="tablebutton_4people" style="position:absolute; left:35%; top:60%;">6</button>
+        <button class="tablebutton_8people" style="position:absolute; left:50%; top:20%;">7</button>
+        <button class="tablebutton_8people" style="position:absolute; left:50%; top:40%;">8</button>
+        <button class="tablebutton_8people" style="position:absolute; left:65%; top:20%;">9</button>
+        <button class="tablebutton_8people" style="position:absolute; left:65%; top:40%;">10</button>
+        </a>
+    </div>
+
+</head>
+</body>
+</html>
+
